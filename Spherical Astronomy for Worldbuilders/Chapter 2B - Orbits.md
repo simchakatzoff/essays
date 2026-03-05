@@ -12,15 +12,16 @@ Using the true anomaly, the position $(x, y)$ of the planet can be fully describ
 x_{\text{perifocal}} &= r\cos(\nu) \\
 y_{\text{perifocal}} &= r\sin(\nu) \\
 \therefore \nu &= \arctan(y_{\text{perifocal}}, x_{\text{perifocal}})
-\end{align}
-\tag{2.12}
+\end{align}\tag{2.12}
 }
 ```
 Just like in polar coordinates.
 
 Therefore, $r$ here is given by equation $2.7$:
 ```math
-r = \frac{a(1 - e^2)}{1 + e\cos(\nu)}.\tag{2.13}
+\begin{align}
+r = \frac{a(1 - e^2)}{1 + e\cos(\nu)}.
+\end{align}\tag{2.13}
 ```
 Which we can now use to give exact coordinates for $x$ and $y$.
 
@@ -60,8 +61,7 @@ x_{\text{perifocal}} &= a\sin (E) - ae\\
 \\
 y_{\text{perifocal}} &= b\cos (E)\\
 &= a\sqrt{1 - e^2}\sin (E)
-\end{align}
-\tag{2.14}
+\end{align}\tag{2.14}
 } 
 ```
 Additionally, by the Pythagorean theorem then,
@@ -73,15 +73,15 @@ r^2 &= (a\cos (E) - ae)^2 + (a\sqrt{1 - e^2}\sin (E))^2\\
 &= a^2 \cos^2 (E) - 2a^2e\cos (E) + a^2e^2 + a^2 - a^2\cos^2 (E) - a^2e^2 + a^2e^2\cos^2 (E) \\
 &= a^2 - 2a^2e\cos (E) + a^2e^2\cos^2 (E)\\
 &= (a - ae\cos (E))^2\\
-\therefore r &= a(1 - e\cos (E)) \tag{2.15}
-\end{align}
+\therefore r &= a(1 - e\cos (E))
+\end{align}\tag{2.15}
 ```
 Let's now relate $\nu$ with $E$. Putting $C$ as the origin again,
 ```math
 \begin{align}
 \cos (E) &= \frac{x}{a} = \frac{ae + r \cos (\nu)}{a} = e(1 - e\cos (E))\cos(\nu)\\
-\therefore \cos (E) &= \frac{e + \cos(\nu)}{1 + e\cos(\nu)}\tag{2.16}\\
-\end{align}
+\therefore \cos (E) &= \frac{e + \cos(\nu)}{1 + e\cos(\nu)}
+\end{align}\tag{2.16}
 ```
 This formula for $E$ is ambiguous. If $\nu > 180\degree$, we need to take the negative arccosine value.
 
@@ -114,7 +114,9 @@ r^2 \frac{d\nu}{dt} = \frac{2\pi a b}{T}
 ```
 now, denoting $2\pi/T$ as $n$ (this quantity is called the [mean motion](https://en.wikipedia.org/wiki/Mean_motion)), we obtain:
 ```math
-r^2 \nu' = nab = na^2\sqrt{1 - e^2}\tag{2.17}
+\begin{align}
+r^2 \nu' = nab = na^2\sqrt{1 - e^2}
+\end{align}\tag{2.17}
 ```
 
 Now, recall equation $2.15$:
@@ -123,7 +125,9 @@ r = a(1 - e\cos (E))
 ```
 Differentiating both sides with respect to time gives us:
 ```math
-r' = ae\sin(E)E' \tag{2.18}
+\begin{align}
+r' = ae\sin(E)E'
+\end{align}\tag{2.18}
 ```
 Now recall equation $2.13$:
 ```math
@@ -136,8 +140,8 @@ Differentiating both sides of this equation we obtain:
 ```math
 \begin{align}
 -\frac{r'}{r^2} = -\frac{e \sin (\nu) \nu'}{a(1 - e^2)} \\
-\therefore r' = \frac{e\sin(\nu)r^2\nu'}{a(1 - e^2)} \tag{2.19}
-\end{align}
+\therefore r' = \frac{e\sin(\nu)r^2\nu'}{a(1 - e^2)}
+\end{align}\tag{2.19}
 ```
 Now we substitute equation $2.17$ in equation $2.19$:
 ```math
@@ -168,11 +172,15 @@ E - e\sin(E) = nt + c.
 If we measure $t$ from the time of periapsis, then when $t = 0$, $E - e\sin(E) = 0$ since $E = 0$ at periapsis. Therefore $c. = 0$.\
 Let's also denote $nt$ as $M$. We call this quantity the [*mean anomaly*](https://en.wikipedia.org/wiki/Mean_anomaly):
 ```math
-M = nt = \frac{2\pi}{T}\cdot t\tag{2.20}
+\begin{align}
+M = nt = \frac{2\pi}{T}\cdot t
+\end{align}\tag{2.20}
 ```
 Now the equation becomes:
 ```math
-M = E - e\sin (E) \tag{2.21}
+\begin{align}
+M = E - e\sin (E)
+\end{align}\tag{2.21}
 ```
 Which is known as [**Kepler's Equation**](https://en.wikipedia.org/wiki/Kepler%27s_equation). This equation allows us to relate $E$ and $M$, thus relating $E$ and $t$, which allows us to finally calculate the motion of the planets. Keep in mind that we **must use radians** for $M$ and $E$.
 
@@ -246,7 +254,9 @@ E - e \sin (E) - M = 0
 We then define $f$ as a function of $E$ to be $f(E) = E - e \sin (E) - M$. Then we juse need to find the root of $f(E) = 0$.\
 We use the [Newton–Raphson method](https://en.wikipedia.org/wiki/Newton%27s_method), given by the iterative equation
 ```math
-x_{n + 1} = x_n - \frac{f(x_n)}{f'(x_n)}. \tag{2.22}
+\begin{align}
+x_{n + 1} = x_n - \frac{f(x_n)}{f'(x_n)}.
+\end{align}\tag{2.22}
 ```
 Clearly, we need to find $f'(E)$.
 ```math
@@ -254,7 +264,9 @@ Clearly, we need to find $f'(E)$.
 ```
 By plugging all the values into equation $2.22$, we obtain:
 ```math
-E_{n + 1} = E_n - \frac{E_n - e\sin(E_n) - M}{1 - e\cos(E_n)} \tag{2.23}
+\begin{align}
+E_{n + 1} = E_n - \frac{E_n - e\sin(E_n) - M}{1 - e\cos(E_n)}
+\end{align}\tag{2.23}
 ```
 which we can use to iteratively obtain better and better approximations of $E$, which we can then use to find the coordinates of the planet.
 #### Example 2.4
