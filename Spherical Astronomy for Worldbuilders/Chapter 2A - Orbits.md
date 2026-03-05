@@ -6,7 +6,9 @@ Unlike stars that have fixed coordinates, planets orbit the Sun, and therefore m
 All planets in space obey [Newton's law of gravitation](https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation). \
 It tells us:
 ```math
-\textbf{F} = -\frac{G M m}{r^3} \cdot \textbf{r}\tag{2.1}
+\begin{align}
+\textbf{F} = -\frac{G M m}{r^3} \cdot \textbf{r}
+\end{align}\tag{2.1}
 ```
 where $\textbf{F}$ is the gravitational force on the planet, $G$ is the [*gravitational constant*](https://en.wikipedia.org/wiki/Gravitational_constant), which is $6.674\cdot10^{-11}\text{ m}^3\text{ kg}^{-1}\text{ s}^{-2}$ in SI units, $M$ and $m$ are the masses of the Sun and the planet respectively, and $\textbf{r}$ and $r$ are the position vector of the planet and its magnitude (the distance between the Sun and the planet) respectively.
 
@@ -22,7 +24,9 @@ Since Kepler's first law states that all orbits are ellipses, let us quickly inv
 
 <img align="left" src="https://github.com/CitruzSquared/essays/assets/23460281/bb81dcca-4a3c-4ad7-9f70-6f4eea3af818" width="350"/> In the diagram is an ellipse with center $O$. The distance $OP$ is known as the semi-major axis and is denoted $a$. ($1$ Astronomical Unit (AU) is defined by the semi-major axis of the Earth's orbit!) The distance $OB$ is known as the semi-minor axis and is denoted $b$. The ellipse can be represented algebraically using these two measures: the ellipse is the locus of all points satisfying the equation
 ```math
-\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1.\tag{2.2}
+\begin{align}
+\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1.
+\end{align}\tag{2.2}
 ```
 
 Point $F$ is located at the point where the length $BF = a$. This point $F$ is known as the [focus](https://en.wikipedia.org/wiki/Focus_(geometry)) of an ellipse and this is where the Sun lies in a planetary orbit. 
@@ -35,26 +39,30 @@ The amount of "squishing" of an ellipse is given by the quantity $c/a$ where $c$
 
 Because $BF = a$, $c^2 = a^2 - b^2$, and $e$ can also be written:
 ```math
-e^2 = \frac{a^2-b^2}{a^2} = 1 - \frac{b^2}{a^2}.\tag{2.3}
+\begin{align}
+e^2 = \frac{a^2-b^2}{a^2} = 1 - \frac{b^2}{a^2}.
+\end{align}\tag{2.3}
 ```
 
 The periapsis distance is then
 ```math
 \begin{align}
 FP &= a - c = a - ae\\
-&= a(1 - e)\tag{2.4}
-\end{align}
+&= a(1 - e)
+\end{align}\tag{2.4}
 ```
 and the apoapsis distance is
 ```math
 \begin{align}
 FA &= a + c = a + ae\\
-&= a(1 + e)\tag{2.5}
-\end{align}
+&= a(1 + e)
+\end{align}\tag{2.5}
 ```
 Finding the semi-major axis length given the periapsis and apoapsis distances is trivial:
 ```math
-a = \frac{1}{2} (FA + FP) \tag{2.6}
+\begin{align}
+a = \frac{1}{2} (FA + FP)
+\end{align}\tag{2.6}
 ```
 
 #### Example 2.1
@@ -121,8 +129,8 @@ r &= \frac{-2ae\cos(\theta) + \sqrt{4a^2e^2\cos^2(\theta) + 4a^2(1 - e^2 \cos^2(
 &= \frac{1 - e^2(-2ae\cos(\theta) + \sqrt{4a^2e^2\cos^2(\theta) + 4a^2 - 4 a^2 e^2 \cos^2(\theta)})}{2 - 2e^2 \cos^2(\theta)}\\
 &= \frac{1 - e^2(-2a e\cos(\theta) + 2a)}{2 - 2e^2 \cos^2(\theta)}\\
 &= \frac{a(1 - e^2)(-e\cos(\theta) + 1)}{1 - e^2 \cos^2(\theta)}\\
-&= \frac{a(1 - e^2)}{1 + e\cos(\theta)}\tag{2.7}
-\end{align}
+&= \frac{a(1 - e^2)}{1 + e\cos(\theta)}
+\end{align}\tag{2.7}
 ```
 
 #### Proof of Kepler's First Law
@@ -209,7 +217,9 @@ Therefore we can write
 ```
 Integrating both sides of this equation gives us
 ```math
-\textbf{v}\times\textbf{h}=GM\textbf{u}+\textbf{C}\tag{2.8}
+\begin{align}
+\textbf{v}\times\textbf{h}=GM\textbf{u}+\textbf{C}
+\end{align}\tag{2.8}
 ```
 where $\textbf{C}$ is a constant vector.
 
@@ -280,17 +290,21 @@ Using the fact that time $=$ distance $/$ speed and that the circumference of th
 ```math
 \begin{align}
 T &= \frac{2\pi r}{v} = \frac{2\pi r}{\sqrt{GM/r}}\\
-&=\sqrt{\frac{4 \pi^2 r^3}{GM}}\tag{2.9}
-\end{align}
+&=\sqrt{\frac{4 \pi^2 r^3}{GM}}
+\end{align}\tag{2.9}
 ```
 We can see that equation $2.9$ is essentially Kepler's third law, which states that $T^2 \propto r^3$.\
 Turns out, we can generalize equation $2.9$ to elliptical orbits without issue!
 ```math
-T = \sqrt{\frac{4 \pi^2 a^3}{GM}}\tag{2.10}
+\begin{align}
+T = \sqrt{\frac{4 \pi^2 a^3}{GM}}
+\end{align}\tag{2.10}
 ```
 If we have two objects comparable in mass, they will orbit each other about their center of mass, and the period will be:
 ```math
- T = \sqrt{\frac{4 \pi^2 a^3}{G(M_1 + M_2)}}. \tag{2.11}
+\begin{align}
+T = \sqrt{\frac{4 \pi^2 a^3}{G(M_1 + M_2)}}.
+\end{align}\tag{2.11}
 ```
 Where $a$ is the sum of the two semi-major axes.
 
