@@ -70,6 +70,7 @@ x \\ y \\ z
 ```
 Actually carrying out the matrix multiplication, this is:
 ```math
+\begin{align}
 \begin{bmatrix}
 p \\ q \\ s
 \end{bmatrix}
@@ -83,10 +84,11 @@ p \\ q \\ s
 \begin{bmatrix}
 x \\ y \\ z
 \end{bmatrix}
-\tag{2.24}
+\end{align}\tag{2.24}
 ```
 The reverse transformation, going from the perifocal frame to the ecliptic frame, is given by the transpose of $R_3 R_2 R_1$:
 ```math
+\begin{align}
 \begin{bmatrix}
 x \\ y \\ z
 \end{bmatrix}
@@ -99,12 +101,13 @@ x \\ y \\ z
 \begin{bmatrix}
 p \\ q \\ s
 \end{bmatrix}
-\tag{2.25}
+\end{align}\tag{2.25}
 ```
 Thus the exact position of $Q$ can be calculated in ecliptic coordinates from the values $a, e, i, \Omega$, and $\omega$ and these are called the [**orbital elements**](https://en.wikipedia.org/wiki/Orbital_elements) of $Q$.
 
 However, if we recognize the fact that $s$ is almost always going to be $0$ in our case (because planets move in the plane of their orbit, there will be almost no cases where we *do* have a $s$ component), we can safely say that, when going from perifocal coordinates to ecliptic coordinates:
 ```math
+\begin{align}
 \begin{bmatrix}
 x \\ y \\ z
 \end{bmatrix}
@@ -117,7 +120,7 @@ x \\ y \\ z
 \begin{bmatrix}
 p \\ q \\ 0
 \end{bmatrix}
-\tag{2.26}
+\end{align}\tag{2.26}
 ```
 
 Note that, for the Earth, since $i = 0\degree$, $\Omega$ and $\omega$ are on the same plane, and therefore only their sum matters, and as long as $\Omega$ and $\omega$ sum to the same number, their actual values do not matter and the results of equations $2.24$ to $31$ will not change.
@@ -216,18 +219,19 @@ $\blacksquare$
 
 In order to get geocentric coordinates, which we will denote by $(\xi, \eta, \zeta)$, we simply subtract the Earth's cartesian coordinates from the target's.
 ```math
- \begin{bmatrix}
+\begin{align}
+\begin{bmatrix}
 \xi_{\text{Planet}} \\ \eta_{\text{Planet}} \\ \zeta_{\text{Planet}}
- \end{bmatrix}
+\end{bmatrix}
 =
- \begin{bmatrix}
+\begin{bmatrix}
 x_{\text{Planet}}\\ y_{\text{Planet}}\\ z_{\text{Planet}}
- \end{bmatrix}
+\end{bmatrix}
 -
- \begin{bmatrix}
+\begin{bmatrix}
 x_{\text{Earth}}\\ y_{\text{Earth}}\\ z_{\text{Earth}}
- \end{bmatrix}
-\tag{2.27}
+\end{bmatrix}
+\end{align}\tag{2.27}
 ```
 Considering that $(x_{\text{Sun}}, y_{\text{Sun}}, z_{\text{Sun}}) = (0, 0, 0)$, equation $2.26$ proves equation $1.5$.
 
@@ -274,11 +278,11 @@ i &= 0\degree
 x_{\text{Earth}} \\ y_{\text{Earth}} \\ z_{\text{Earth}}
 \end{bmatrix}
 =
- \begin{bmatrix}
+\begin{bmatrix}
 -0.224052873866 & -0.974576990141 & 0 \\
 0.974576990141 & −0.224052873866 & 0 \\
 0 & 0 & 0
- \end{bmatrix}
+\end{bmatrix}
 \begin{bmatrix}
 33.384 \\ 145.213 \\ 0
 \end{bmatrix}
@@ -290,9 +294,9 @@ x_{\text{Earth}} \\ y_{\text{Earth}} \\ z_{\text{Earth}}
 ```
 Therefore, using this new result and the result of example $2.5$, by equation $2.27$:
 ```math
- \begin{bmatrix}
+\begin{bmatrix}
 \xi_{\text{Mars}} \\ \eta_{\text{Mars}} \\ \zeta_{\text{Mars}}
- \end{bmatrix}
+\end{bmatrix}
 =
 \begin{bmatrix}
 118.787 \\ −172.177 \\ −6.527
