@@ -36,18 +36,18 @@ Using trigonometry, one can find the radius of the latitude circle of a sphere w
 ```math
 \begin{align}
 x &= \rho \cos(\varphi) \cos(\theta)
-\\ y &= \rho \cos(\varphi) \sin(\theta) \tag{1.1}
+\\ y &= \rho \cos(\varphi) \sin(\theta)
 \\ z &= \rho \sin(\varphi)
-\end{align}
+\end{align} \tag{1.1}
 ```
 Where $x$, $y$, and $z$ are the cartesian coordinates of the point described by $\rho$, $\theta$, and $\varphi$.\
 The reverse transformation, also derived by simple geometry, is given below:
 ```math
 \begin{align}
 \rho &= \sqrt{x^2 + y^2 + z^2}
-\\ \theta &= \arctan(y, x) \tag{1.2}
+\\ \theta &= \arctan(y, x)
 \\ \varphi &= \arcsin(z / \rho)
-\end{align}
+\end{align} \tag{1.2}
 ```
 Where $\arctan(y, x)$ is the [two argument arctangent](https://en.wikipedia.org/wiki/Atan2), used to avoid tangent ambiguity. Note that while most calculators and programming languages use $\arctan(y, x)$, [WolframAlpha](https://www.wolframalpha.com/) uses $\arctan(x, y)$.
 
@@ -88,6 +88,7 @@ $XOA$ is the ecliptic longitude, and $AOP$ is the ecliptic latitude.
 
 - **Ecliptic to Equatorial:**
 ```math
+\begin{align}
 \begin{bmatrix}
 x_{\text{equatorial}} \\ y_{\text{equatorial}} \\ z_{\text{equatorial}}
 \end{bmatrix}
@@ -95,16 +96,18 @@ x_{\text{equatorial}} \\ y_{\text{equatorial}} \\ z_{\text{equatorial}}
 \begin{bmatrix}
 1 & 0 & 0 \\
 0 & \cos{(\varepsilon)} & -\sin{(\varepsilon)} \\
-0 & \sin{(\varepsilon)} & \cos{(\varepsilon)}  \tag{1.3}
+0 & \sin{(\varepsilon)} & \cos{(\varepsilon)}
 \end{bmatrix}
 \begin{bmatrix}
 x_{\text{ecliptic}} \\ y_{\text{ecliptic}} \\ z_{\text{ecliptic}}
 \end{bmatrix}
+\end{align} \tag{1.3}
 ```
 The $x$ coordinate stays the same as the ecliptic and equatorial coordinate systems have the same $x$-axis: the direction of Vernal Equinox.
 
 - **Equatorial to Ecliptic:**
 ```math
+\begin{align}
 \begin{bmatrix}
 x_{\text{ecliptic}} \\ y_{\text{ecliptic}} \\ z_{\text{ecliptic}}
 \end{bmatrix}
@@ -112,11 +115,12 @@ x_{\text{ecliptic}} \\ y_{\text{ecliptic}} \\ z_{\text{ecliptic}}
 \begin{bmatrix}
 1 & 0 & 0 \\
 0 & \cos{(\varepsilon)} & \sin{(\varepsilon)} \\
-0 & -\sin{(\varepsilon)} & \cos{(\varepsilon)}  \tag{1.4}
+0 & -\sin{(\varepsilon)} & \cos{(\varepsilon)}
 \end{bmatrix}
 \begin{bmatrix}
 x_{\text{equatorial}} \\ y_{\text{equatorial}} \\ z_{\text{equatorial}}
 \end{bmatrix}
+\end{align} \tag{1.4}
 ```
 Again, the $x$ coordinate stays the same as the ecliptic and equatorial coordinate systems have the same $x$-axis: the direction of Vernal Equinox.
 
@@ -139,32 +143,32 @@ On $\text{January }2,\:2024$, the Moon's right ascension was $11^{h}\: 19^{m}\: 
 We first convert the sexagesimal notation to degrees:
 ```math
 \begin{alignat}{3}
-\alpha &= 11^{h}\: 19^{m}\: &&30.12^{s} &&= 169.8755\degree \\
-\delta &= 07\degree\: 21'\: &&42.9'' &&= 7.3619\degree
+& \alpha &= 11^{h}\: 19^{m}\: &&30.12^{s} &&= 169.8755\degree \\
+& \delta &= 07\degree\: 21'\: &&42.9''    &&= 7.3619\degree
 \end{alignat}
 ```
 Keeping in mind that $1^{h}$ is $360\degree/24 = 15\degree$.\
 We then convert the equatorial coordinates given to equatorial cartesian coordinates ($\rho = 1$ because the celestial sphere is of arbitrary radius) using equation $1.1$:
 ```math
 \begin{alignat}{2}
-x &= \cos(\delta)\cos(\alpha) &&= -0.976313\\
-y &= \cos(\delta)\sin(\alpha) &&= 0.174339\\
-z &= \sin(\delta) &&= 0.128136
+& x &= \cos(\delta)\cos(\alpha) &&= -0.976313\\
+& y &= \cos(\delta)\sin(\alpha) &&= 0.174339\\
+& z &= \sin(\delta)             &&= 0.128136
 \end{alignat}
 ```
 Next, we carry out the matrix multiplication (equation $1.4$):
 ```math
 \begin{alignat}{3}
-x_{\text{ecliptic}} &= 1 \cdot x + 0 \cdot y &&+ 0 \cdot z && = -0.976313 \\
-y_{\text{ecliptic}} &= 0 \cdot x + \cos{(\varepsilon)} \cdot y &&+ \sin{(\varepsilon)} \cdot z &&= 0.210923 \\
-z_{\text{ecliptic}} &= 0 \cdot x - \sin{(\varepsilon)} \cdot y &&+ \cos{(\varepsilon)} \cdot z &&= 0.0482118
+& x_{\text{ecliptic}} &= 1 \cdot x + 0 \cdot y                   &&+ 0 \cdot z                   &&= -0.976313 \\
+& y_{\text{ecliptic}} &= 0 \cdot x + \cos{(\varepsilon)} \cdot y &&+ \sin{(\varepsilon)} \cdot z &&= 0.210923 \\
+& z_{\text{ecliptic}} &= 0 \cdot x - \sin{(\varepsilon)} \cdot y &&+ \cos{(\varepsilon)} \cdot z &&= 0.0482118
 \end{alignat}
 ```
 We then convert to spherical coordinates with $\rho = 1$ using equation $1.2$.
 ```math
 \begin{alignat}{2}
-\lambda &= \arctan(0.210923,-0.976313) &&=  167\degree\:48'\:32.97''\\
-\beta &= \arcsin(0.0482118/1) &&= \:\:2\degree\:45'\:48.24''
+& \lambda &= \arctan(0.210923,-0.976313) &&=  167\degree\:48'\:32.97''\\
+& \beta   &= \arcsin(0.0482118/1)        &&= \:\:2\degree\:45'\:48.24''
 \end{alignat}
 ```
 Ecliptic longitude $167\degree$ $48'$ $32.97''$ is in between $150\degree$ and $180\degree$, therefore the Moon was in the Zodiac sign Virgo this day. Thus the ecliptic longitude could also be expressed as:
@@ -177,8 +181,8 @@ The above coordinate systems are *geocentric* in nature, and these are the coord
 ```math
 \displaylines{
 \begin{align}
-\lambda_{\text{Geocentric}} \text{ of the Sun } &= \lambda_{\text{Heliocentric}} \text{ of the Earth } \pm 180\degree\\
-\beta_{\text{Geocentric}} \text{ of the Sun } &= -\beta_{\text{Heliocentric}} \text{ of the Earth}
+& \lambda_{\text{Geocentric}} \text{ of the Sun } &= \lambda_{\text{Heliocentric}} \text{ of the Earth } \pm 180\degree\\
+& \beta_{\text{Geocentric}} \text{ of the Sun } &= -\beta_{\text{Heliocentric}} \text{ of the Earth}
 \end{align}
 }\tag{1.5}
 ```
