@@ -48,20 +48,20 @@ The periapsis distance is then
 ```math
 \begin{align}
 FP &= a - c = a - ae\\
-&= a(1 - e)
+&= a\left(1 - e\right)
 \end{align}\tag{2.4}
 ```
 and the apoapsis distance is
 ```math
 \begin{align}
 FA &= a + c = a + ae\\
-&= a(1 + e)
+&= a\left(1 + e\right)
 \end{align}\tag{2.5}
 ```
 Finding the semi-major axis length given the periapsis and apoapsis distances is trivial:
 ```math
 \begin{align}
-a = \frac{1}{2} (FA + FP)
+a = \frac{1}{2} \left(FA + FP\right)
 \end{align}\tag{2.6}
 ```
 
@@ -82,18 +82,18 @@ Find the semi-minor axis, the perihelion distance, and the apohelion distance.
 By rearranging equation $2.3$:
 ```math
 \begin{align}
-b &= \sqrt{a^2(1 - e^2)}\\
-&= \sqrt{149\:598\:023^2\text{ km}^2 (1 - 0.0167^2)}\\
+b &= \sqrt{a^2\left(1 - e^2\right)}\\
+&= \sqrt{149\:598\:023^2\text{ km}^2 \left(1 - 0.0167^2\right)}\\
 &= 149\:577\:161 \text{ km}
 \end{align}
 ```
 The periapsis distance is given by equation $2.4$:
 ```math
-149\:598\:023\text{ km }(1 - 0.0167) = 147\:099\:736\text{ km}
+149\:598\:023\text{ km }\left(1 - 0.0167\right) = 147\:099\:736\text{ km}
 ```
 And the apoapsis distance is given by equation $2.5$:
 ```math
-149\:598\:023\text{ km }(1 + 0.0167) = 152\:096\:309\text{ km}
+149\:598\:023\text{ km }\left(1 + 0.0167\right) = 152\:096\:309\text{ km}
 ```
 $\blacksquare$
 
@@ -104,32 +104,32 @@ By equation $2.2$:
 ```
 But remember we have put the (right) focus as the origin and therefore $x$ becomes $x + ae$:
 ```math
-\frac{(x + ae)^2}{a^2} + \frac{y^2}{b^2} = 1
+\frac{\left(x + ae\right)^2}{a^2} + \frac{y^2}{b^2} = 1
 ```
-Substituting $b^2 = a^2(1 - e^2)$:
+Substituting $b^2 = a^2\left(1 - e^2\right)$:
 ```math
 \begin{align}
-\frac{(x + ae)^2}{a^2} + \frac{y^2}{a^2(1 - e^2)} &= 1\\
-(x + ae)^2 + \frac{y^2}{1 - e^2} &= a^2\\
+\frac{\left(x + ae\right)^2}{a^2} + \frac{y^2}{a^2\left(1 - e^2\right)} &= 1\\
+\left(x + ae\right)^2 + \frac{y^2}{1 - e^2} &= a^2\\
 x^2 + 2aex + a^2e^2  + \frac{y^2}{1 - e^2} &= a^2
 \end{align}
 ```
-Now we substitute $r\cos(\theta)$ and $r\sin(\theta)$ for $x$ and $y$:
+Now we substitute $r\cos\left(\theta\right)$ and $r\sin\left(\theta\right)$ for $x$ and $y$:
 ```math
-(r\cos(\theta))^2 + 2ae(r\cos(\theta)) + a^2e^2  + \frac{(r\sin(\theta))^2}{1 - e^2} = a^2
+\left(r\cos\left(\theta\right)\right)^2 + 2ae\left(r\cos\left(\theta\right)\right) + a^2e^2  + \frac{\left(r\sin\left(\theta\right)\right)^2}{1 - e^2} = a^2
 ```
 Which gives the following quadratic equation in $r$:
 ```math
-\frac{1 - e^2 \cos^2(\theta)}{1 - e^2} r^2 + 2ae\cos(\theta) r - a^2(1 - e^2) = 0
+\frac{1 - e^2 \cos^2\left(\theta\right)}{1 - e^2} r^2 + 2ae\cos\left(\theta\right) r - a^2\left(1 - e^2\right) = 0
 ```
 Finally, solving for $r$ gives us
 ```math
 \begin{align}
-r &= \frac{-2ae\cos(\theta) + \sqrt{4a^2e^2\cos^2(\theta) + 4a^2(1 - e^2 \cos^2(\theta))}}{2\frac{1 - e^2 \cos^2(\theta)}{1 - e^2}}\\
-&= \frac{1 - e^2(-2ae\cos(\theta) + \sqrt{4a^2e^2\cos^2(\theta) + 4a^2 - 4 a^2 e^2 \cos^2(\theta)})}{2 - 2e^2 \cos^2(\theta)}\\
-&= \frac{1 - e^2(-2a e\cos(\theta) + 2a)}{2 - 2e^2 \cos^2(\theta)}\\
-&= \frac{a(1 - e^2)(-e\cos(\theta) + 1)}{1 - e^2 \cos^2(\theta)}\\
-&= \frac{a(1 - e^2)}{1 + e\cos(\theta)}
+r &= \frac{-2ae\cos\left(\theta\right) + \sqrt{4a^2e^2\cos^2\left(\theta\right) + 4a^2\left(1 - e^2 \cos^2\left(\theta\right)\right)}}{2\frac{1 - e^2 \cos^2\left(\theta\right)}{1 - e^2}}\\
+&= \frac{1 - e^2\left(-2ae\cos\left(\theta\right) + \sqrt{4a^2e^2\cos^2\left(\theta\right) + 4a^2 - 4 a^2 e^2 \cos^2\left(\theta\right)}\right)}{2 - 2e^2 \cos^2\left(\theta\right)}\\
+&= \frac{1 - e^2\left(-2a e\cos\left(\theta\right) + 2a\right)}{2 - 2e^2 \cos^2\left(\theta\right)}\\
+&= \frac{a\left(1 - e^2\right)\left(-e\cos\left(\theta\right) + 1\right)}{1 - e^2 \cos^2\left(\theta\right)}\\
+&= \frac{a\left(1 - e^2\right)}{1 + e\cos\left(\theta\right)}
 \end{align}\tag{2.7}
 ```
 
@@ -171,7 +171,7 @@ which shows that $\textbf{a}$ and $\textbf{r}$ are a scalar multiple of each oth
 In addition,
 ```math
 \begin{align}
-\frac{d}{dt}(\textbf{r}\times\textbf{v}) &= \textbf{r}'\times\textbf{v}+\textbf{r}\times\textbf{v}'\\
+\frac{d}{dt}\left(\textbf{r}\times\textbf{v}\right) &= \textbf{r}'\times\textbf{v}+\textbf{r}\times\textbf{v}'\\
 &=\textbf{v}\times\textbf{v}+\textbf{r}\times\textbf{a}\\
 &=\textbf{0}\times\textbf{0}\\
 &=\textbf{0}.
@@ -186,23 +186,23 @@ where $\textbf{h}$ is a constant vector. We can reasonably assume $\textbf{r}$ a
 Let us now rewrite $\textbf{h}$.
 ```math
 \begin{align}
-\textbf{h} &= \textbf{r}\times\textbf{v} = \textbf{r}\times\textbf{r}' =r\textbf{u}\times(r\textbf{u})'\\
-&=r\textbf{u}\times(r'\textbf{u}+r\textbf{u}') =r^2(\textbf{u}\times\textbf{u}')+rr'(\textbf{u}\times\textbf{u})\\
-&=r^2(\textbf{u}\times\textbf{u}').
+\textbf{h} &= \textbf{r}\times\textbf{v} = \textbf{r}\times\textbf{r}' =r\textbf{u}\times\left(r\textbf{u}\right)'\\
+&=r\textbf{u}\times\left(r'\textbf{u}+r\textbf{u}'\right) =r^2\left(\textbf{u}\times\textbf{u}'\right)+rr'\left(\textbf{u}\times\textbf{u}\right)\\
+&=r^2\left(\textbf{u}\times\textbf{u}'\right).
 \end{align}
 ```
 Then,
 ```math
 \begin{align}
-\textbf{a}\times\textbf{h} &= -\frac{GM}{r^2}\textbf{u}\times r^2(\textbf{u}\times\textbf{u}')\\
-&= -GM\textbf{u}\times(\textbf{u}\times\textbf{u}')\\
-&= -GM[(\textbf{u}\cdot\textbf{u}')\textbf{u}-(\textbf{u}\cdot\textbf{u})\textbf{u}')]
+\textbf{a}\times\textbf{h} &= -\frac{GM}{r^2}\textbf{u}\times r^2\left(\textbf{u}\times\textbf{u}'\right)\\
+&= -GM\textbf{u}\times\left(\textbf{u}\times\textbf{u}'\right)\\
+&= -GM\left[\left(\textbf{u}\cdot\textbf{u}'\right)\textbf{u}-\left(\textbf{u}\cdot\textbf{u}\right)\textbf{u}'\right]
 \end{align}
 ```
 But since $\textbf{u}$ is a unit vector ($|\textbf{u}| = 1$), $\textbf{u}\cdot\textbf{u} = 1$ (a constant) and so:
 ```math
 \begin{align}
-\frac{d}{dt}(\textbf{u}\cdot\textbf{u}) &= \textbf{u}'\cdot\textbf{u}+\textbf{u}\cdot\textbf{u}'\\
+\frac{d}{dt}\left(\textbf{u}\cdot\textbf{u}\right) &= \textbf{u}'\cdot\textbf{u}+\textbf{u}\cdot\textbf{u}'\\
 &=2\textbf{u}\cdot\textbf{u}'= 0.\\
 \therefore \textbf{u}\cdot\textbf{u}'&=0\\
 \therefore \textbf{a}\times\textbf{h}&=GM\textbf{u}'
@@ -211,7 +211,7 @@ But since $\textbf{u}$ is a unit vector ($|\textbf{u}| = 1$), $\textbf{u}\cdot\t
 Therefore we can write
 ```math
 \begin{align}
-\frac{d}{dt}(\textbf{v}\times\textbf{h})&=\textbf{v}'\times\textbf{h}+\textbf{v}\times\textbf{h}'=\textbf{v}'\times\textbf{h}\\
+\frac{d}{dt}\left(\textbf{v}\times\textbf{h}\right)&=\textbf{v}'\times\textbf{h}+\textbf{v}\times\textbf{h}'=\textbf{v}'\times\textbf{h}\\
 &=\textbf{a}\times\textbf{h} = GM\textbf{u}'
 \end{align}
 ```
@@ -229,37 +229,37 @@ Now, because $\textbf{v}\times\textbf{h}$ and $\textbf{u}$ are perpendicular to 
 From equation $2.8$ we now have:
 ```math
 \begin{align}
-\textbf{r}\cdot(\textbf{v}\times\textbf{h})&=\textbf{r}\cdot(GM\textbf{u}+\textbf{C})\\
+\textbf{r}\cdot\left(\textbf{v}\times\textbf{h}\right)&=\textbf{r}\cdot\left(GM\textbf{u}+\textbf{C}\right)\\
 &=GM\textbf{r}\cdot\textbf{u}+\textbf{r}\cdot\textbf{C}\\
-&=GMr\textbf{u}\cdot\textbf{u}+|\textbf{r}||\textbf{C}|\cos(\theta)\\
-&=GMr + rc\cos(\theta)
+&=GMr\textbf{u}\cdot\textbf{u}+|\textbf{r}||\textbf{C}|\cos\left(\theta\right)\\
+&=GMr + rc\cos\left(\theta\right)
 \end{align}
 ```
 where $c = |\textbf{C}|$. Now, solving for $r$,
 ```math
-r=\frac{\textbf{r}\cdot(\textbf{b}\times\textbf{h})}{GM+c\cos(\theta)}
+r=\frac{\textbf{r}\cdot\left(\textbf{b}\times\textbf{h}\right)}{GM+c\cos\left(\theta\right)}
 ```
-If we put $c/(GM)$ = $e$ (and thus $GM = c/e$),
+If we put $c/\left(GM\right)$ = $e$ (and thus $GM = c/e$),
 ```math
-r=\frac{1}{GM}\cdot\frac{\textbf{r}\cdot(\textbf{v}\times\textbf{h})}{1+e\cos(\theta)}=\frac{e}{c}\cdot\frac{\textbf{r}\cdot(\textbf{v}\times\textbf{h})}{1+e\cos(\theta)}
+r=\frac{1}{GM}\cdot\frac{\textbf{r}\cdot\left(\textbf{v}\times\textbf{h}\right)}{1+e\cos\left(\theta\right)}=\frac{e}{c}\cdot\frac{\textbf{r}\cdot\left(\textbf{v}\times\textbf{h}\right)}{1+e\cos\left(\theta\right)}
 ```
 But,
 ```math
-\textbf{r}\cdot(\textbf{v}\times\textbf{h})=(\textbf{r}\times\textbf{v})\cdot\textbf{h}=\textbf{h}\cdot\textbf{h}=h^2
+\textbf{r}\cdot\left(\textbf{v}\times\textbf{h}\right)=\left(\textbf{r}\times\textbf{v}\right)\cdot\textbf{h}=\textbf{h}\cdot\textbf{h}=h^2
 ```
 where $h = |\textbf{h}|$.\
 Thus:
 ```math
-r= \frac{h^2e/c}{1+e\cos(\theta)}
+r= \frac{h^2e/c}{1+e\cos\left(\theta\right)}
 ```
 If we now set $p=h^2/c$, we obtain for $r$:
 ```math
-r=\frac{ep}{1+e\cos(\theta)}
+r=\frac{ep}{1+e\cos\left(\theta\right)}
 ```
 This is a perfectly good polar equation for an ellipse, using $p$, which is the distance from the focus to the [*directrix*](https://en.wikipedia.org/wiki/Conic_section#Eccentricity,_focus_and_directrix) of the ellipse.\
 However, $p$ can be written as $p = a/e + ae$, thus:
 ```math
-r=\frac{a + ae^2}{1+e\cos(\theta)}
+r=\frac{a + ae^2}{1+e\cos\left(\theta\right)}
 ```
 Which is precisely equation $2.7$.\
 $\blacksquare$
@@ -303,7 +303,7 @@ T = \sqrt{\frac{4 \pi^2 a^3}{GM}}
 If we have two objects comparable in mass, they will orbit each other about their center of mass, and the period will be:
 ```math
 \begin{align}
-T = \sqrt{\frac{4 \pi^2 a^3}{G(M_1 + M_2)}}.
+T = \sqrt{\frac{4 \pi^2 a^3}{G\left(M_1 + M_2\right)}}.
 \end{align}\tag{2.11}
 ```
 Where $a$ is the sum of the two semi-major axes.
@@ -327,7 +327,7 @@ By equation $2.10$:
 ```math
 \begin{align}
 T &= \sqrt{\frac{4 \pi^2 a^3}{GM}}\\
-&=\sqrt{\frac{4 \pi^2 (1.496\cdot10^{11}\text{ m})^3}{(6.674\cdot10^{-11}\text{ m}^3\text{ kg}^{-1}\text{ s}^{-2})(1.989\cdot 10^{30} \text{ kg})}}\\
+&=\sqrt{\frac{4 \pi^2 \left(1.496\cdot10^{11}\text{ m}\right)^3}{\left(6.674\cdot10^{-11}\text{ m}^3\text{ kg}^{-1}\text{ s}^{-2}\right)\left(1.989\cdot 10^{30} \text{ kg}\right)}}\\
 &= 3.1554897 \cdot 10^7 \text{ s}
 \end{align}
 ```
