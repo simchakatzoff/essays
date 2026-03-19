@@ -30,14 +30,14 @@ Evidently the best way to locate a point on the Celestial *Sphere* is with [*sph
 $\rho$ is the distance from the origin to the point in question, $\theta$ is the angle East from North, and $\varphi$ is the angle of altitude from the $xy$-plane. (Note in mathematics and physics (and the diagram on Wikipedia), instead of $\varphi$ being the angle above the $xy$-plane, it is the complement of that angle, the angle down from the $z$-axis.) Thus, $\theta$ ranges from $0\degree$ to $360\degree$, and $\varphi$ from $-90\degree$ to $90\degree$.
 
 This coordinate system can be thought of as the longitude-latitude system of Earth, where $\theta$ is the longitude, and $\varphi$ is the latitude.
-Using trigonometry, one can find the radius of the latitude circle of a sphere with radius $\rho$ is $\rho \cos(\varphi)$ (View figure), so:
+Using trigonometry, one can find the radius of the latitude circle of a sphere with radius $\rho$ is $\rho \cos\left(\varphi\right)$ (View figure), so:
 <img align="left" src="https://github.com/CitruzSquared/essays/assets/23460281/6d9a1a2f-885a-4f94-98df-4e0814da6e90" width="250"/>
 
 ```math
 \begin{align}
-x &= \rho \cos(\varphi) \cos(\theta)
-\\ y &= \rho \cos(\varphi) \sin(\theta)
-\\ z &= \rho \sin(\varphi)
+x &= \rho \cos\left(\varphi\right) \cos\left(\theta\right)
+\\ y &= \rho \cos\left(\varphi\right) \sin\left(\theta\right)
+\\ z &= \rho \sin\left(\varphi\right)
 \end{align} \tag{1.1}
 ```
 Where $x$, $y$, and $z$ are the cartesian coordinates of the point described by $\rho$, $\theta$, and $\varphi$.\
@@ -45,11 +45,11 @@ The reverse transformation, also derived by simple geometry, is given below:
 ```math
 \begin{align}
 \rho &= \sqrt{x^2 + y^2 + z^2}
-\\ \theta &= \arctan(y, x)
-\\ \varphi &= \arcsin(z / \rho)
+\\ \theta &= \arctan\left(y, x\right)
+\\ \varphi &= \arcsin\left(z / \rho\right)
 \end{align} \tag{1.2}
 ```
-Where $\arctan(y, x)$ is the [two argument arctangent](https://en.wikipedia.org/wiki/Atan2), used to avoid tangent ambiguity. Note that while most calculators and programming languages use $\arctan(y, x)$, [WolframAlpha](https://www.wolframalpha.com/) uses $\arctan(x, y)$.
+Where $\arctan\left(y, x\right)$ is the [two argument arctangent](https://en.wikipedia.org/wiki/Atan2), used to avoid tangent ambiguity. Note that while most calculators and programming languages use $\arctan\left(y, x\right)$, [WolframAlpha](https://www.wolframalpha.com/) uses $\arctan\left(x, y\right)$.
 
 There are two coordinate systems in wide use. The [Equatorial Coordinate System](https://en.wikipedia.org/wiki/Equatorial_coordinate_system) and the [Ecliptic Coordinate System](https://en.wikipedia.org/wiki/Ecliptic_coordinate_system). 
 
@@ -95,8 +95,8 @@ x_{\text{equatorial}} \\ y_{\text{equatorial}} \\ z_{\text{equatorial}}
 =
 \begin{bmatrix}
 1 & 0 & 0 \\
-0 & \cos{(\varepsilon)} & -\sin{(\varepsilon)} \\
-0 & \sin{(\varepsilon)} & \cos{(\varepsilon)}
+0 & \cos{\left(\varepsilon\right)} & -\sin{\left(\varepsilon\right)} \\
+0 & \sin{\left(\varepsilon\right)} &  \cos{\left(\varepsilon\right)}
 \end{bmatrix}
 \begin{bmatrix}
 x_{\text{ecliptic}} \\ y_{\text{ecliptic}} \\ z_{\text{ecliptic}}
@@ -114,8 +114,8 @@ x_{\text{ecliptic}} \\ y_{\text{ecliptic}} \\ z_{\text{ecliptic}}
 =
 \begin{bmatrix}
 1 & 0 & 0 \\
-0 & \cos{(\varepsilon)} & \sin{(\varepsilon)} \\
-0 & -\sin{(\varepsilon)} & \cos{(\varepsilon)}
+0 &  \cos{\left(\varepsilon\right)} & \sin{\left(\varepsilon\right)} \\
+0 & -\sin{\left(\varepsilon\right)} & \cos{\left(\varepsilon\right)}
 \end{bmatrix}
 \begin{bmatrix}
 x_{\text{equatorial}} \\ y_{\text{equatorial}} \\ z_{\text{equatorial}}
@@ -151,24 +151,24 @@ Keeping in mind that $1^{h}$ is $360\degree/24 = 15\degree$.\
 We then convert the equatorial coordinates given to equatorial cartesian coordinates ($\rho = 1$ because the celestial sphere is of arbitrary radius) using equation $1.1$:
 ```math
 \begin{alignat}{2}
-& x &= \cos(\delta)\cos(\alpha) &&= -0.976313\\
-& y &= \cos(\delta)\sin(\alpha) &&= 0.174339\\
-& z &= \sin(\delta)             &&= 0.128136
+& x &= \cos\left(\delta\right)\cos\left(\alpha\right) &&= -0.976313\\
+& y &= \cos\left(\delta\right)\sin\left(\alpha\right) &&= 0.174339\\
+& z &= \sin\left(\delta\right)                        &&= 0.128136
 \end{alignat}
 ```
 Next, we carry out the matrix multiplication (equation $1.4$):
 ```math
 \begin{alignat}{3}
-& x_{\text{ecliptic}} &= 1 \cdot x + 0 \cdot y                   &&+ 0 \cdot z                   &&= -0.976313 \\
-& y_{\text{ecliptic}} &= 0 \cdot x + \cos{(\varepsilon)} \cdot y &&+ \sin{(\varepsilon)} \cdot z &&= 0.210923 \\
-& z_{\text{ecliptic}} &= 0 \cdot x - \sin{(\varepsilon)} \cdot y &&+ \cos{(\varepsilon)} \cdot z &&= 0.0482118
+& x_{\text{ecliptic}} &= 1 \cdot x + 0 \cdot y                              &&+ 0 \cdot z                              &&= -0.976313 \\
+& y_{\text{ecliptic}} &= 0 \cdot x + \cos{\left(\varepsilon\right)} \cdot y &&+ \sin{\left(\varepsilon\right)} \cdot z &&= 0.210923 \\
+& z_{\text{ecliptic}} &= 0 \cdot x - \sin{\left(\varepsilon\right)} \cdot y &&+ \cos{\left(\varepsilon\right)} \cdot z &&= 0.0482118
 \end{alignat}
 ```
 We then convert to spherical coordinates with $\rho = 1$ using equation $1.2$.
 ```math
 \begin{alignat}{2}
-& \lambda &= \arctan(0.210923,-0.976313) &&=  167\degree\:48'\:32.97''\\
-& \beta   &= \arcsin(0.0482118/1)        &&= \:\:2\degree\:45'\:48.24''
+& \lambda &= \arctan\left(0.210923,-0.976313\right) &&=  167\degree\:48'\:32.97''\\
+& \beta   &= \arcsin\left(0.0482118/1\right)        &&= \:\:2\degree\:45'\:48.24''
 \end{alignat}
 ```
 Ecliptic longitude $167\degree$ $48'$ $32.97''$ is in between $150\degree$ and $180\degree$, therefore the Moon was in the Zodiac sign Virgo this day. Thus the ecliptic longitude could also be expressed as:
@@ -182,7 +182,7 @@ The above coordinate systems are *geocentric* in nature, and these are the coord
 \displaylines{
 \begin{align}
 & \lambda_{\text{Geocentric}} \text{ of the Sun } &= \lambda_{\text{Heliocentric}} \text{ of the Earth } \pm 180\degree\\
-& \beta_{\text{Geocentric}} \text{ of the Sun } &= -\beta_{\text{Heliocentric}} \text{ of the Earth}
+& \beta_{\text{Geocentric}} \text{ of the Sun }   &= -\beta_{\text{Heliocentric}} \text{ of the Earth}
 \end{align}
 }\tag{1.5}
 ```
