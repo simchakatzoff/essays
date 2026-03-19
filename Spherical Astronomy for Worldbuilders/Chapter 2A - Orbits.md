@@ -199,7 +199,7 @@ Then,
 &= -GM\left[\left(\textbf{u}\cdot\textbf{u}'\right)\textbf{u}-\left(\textbf{u}\cdot\textbf{u}\right)\textbf{u}'\right]
 \end{align}
 ```
-But since $\textbf{u}$ is a unit vector ($|\textbf{u}| = 1$), $\textbf{u}\cdot\textbf{u} = 1$ (a constant) and so:
+But since $\textbf{u}$ is a unit vector ($\left|\textbf{u}\right| = 1$), $\textbf{u}\cdot\textbf{u} = 1$ (a constant) and so:
 ```math
 \begin{align}
 \frac{d}{dt}\left(\textbf{u}\cdot\textbf{u}\right) &= \textbf{u}'\cdot\textbf{u}+\textbf{u}\cdot\textbf{u}'\\
@@ -231,11 +231,11 @@ From equation $2.8$ we now have:
 \begin{align}
 \textbf{r}\cdot\left(\textbf{v}\times\textbf{h}\right)&=\textbf{r}\cdot\left(GM\textbf{u}+\textbf{C}\right)\\
 &=GM\textbf{r}\cdot\textbf{u}+\textbf{r}\cdot\textbf{C}\\
-&=GMr\textbf{u}\cdot\textbf{u}+|\textbf{r}||\textbf{C}|\cos\left(\theta\right)\\
+&=GMr\textbf{u}\cdot\textbf{u}+\left|\textbf{r}\right|\left|\textbf{C}\right|\cos\left(\theta\right)\\
 &=GMr + rc\cos\left(\theta\right)
 \end{align}
 ```
-where $c = |\textbf{C}|$. Now, solving for $r$,
+where $c = \left|\textbf{C}\right|$. Now, solving for $r$,
 ```math
 r=\frac{\textbf{r}\cdot\left(\textbf{b}\times\textbf{h}\right)}{GM+c\cos\left(\theta\right)}
 ```
@@ -247,7 +247,7 @@ But,
 ```math
 \textbf{r}\cdot\left(\textbf{v}\times\textbf{h}\right)=\left(\textbf{r}\times\textbf{v}\right)\cdot\textbf{h}=\textbf{h}\cdot\textbf{h}=h^2
 ```
-where $h = |\textbf{h}|$.\
+where $h = \left|\textbf{h}\right|$.\
 Thus:
 ```math
 r= \frac{h^2e/c}{1+e\cos\left(\theta\right)}
