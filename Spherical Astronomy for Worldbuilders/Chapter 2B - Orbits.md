@@ -5,13 +5,13 @@ Before we move on, let's come up with a system of describing the position of a p
 
 <img align="left" src="https://github.com/CitruzSquared/essays/assets/23460281/84b9f828-3fc9-4dd8-a3a8-dda6d9f7c572" width="350"/> In the diagram, the orbit of a planet $A$ is shown, where $O$, the origin, is the focus, and therefore the location of the Sun, and $P$ is the perihelion. The angle $POA$ is known as the [*true anomaly*](https://en.wikipedia.org/wiki/True_anomaly), and is denoted $\nu$. This makes it such that the true anomaly is essentially $\theta$ in the polar equation for the ellipse. (True anomaly is measured in the direction of the orbit, which in this case we assume is counterclockwise.)
 
-Using the true anomaly, the position $(x, y)$ of the planet can be fully described as:
+Using the true anomaly, the position $\left(x, y\right)$ of the planet can be fully described as:
 ```math
 \displaylines{
 \begin{align}
-x_{\text{perifocal}} &= r\cos(\nu) \\
-y_{\text{perifocal}} &= r\sin(\nu) \\
-\therefore \nu &= \arctan(y_{\text{perifocal}}, x_{\text{perifocal}})
+x_{\text{perifocal}} &= r\cos\left(\nu\right) \\
+y_{\text{perifocal}} &= r\sin\left(\nu\right) \\
+\therefore \nu &= \arctan\left(y_{\text{perifocal}}, x_{\text{perifocal}}\right)
 \end{align}\tag{2.12}
 }
 ```
@@ -20,7 +20,7 @@ Just like in polar coordinates.
 Therefore, $r$ here is given by equation $2.7$:
 ```math
 \begin{align}
-r = \frac{a(1 - e^2)}{1 + e\cos(\nu)}.
+r = \frac{a\left(1 - e^2\right)}{1 + e\cos\left(\nu\right)}.
 \end{align}\tag{2.13}
 ```
 Which we can now use to give exact coordinates for $x$ and $y$.
@@ -31,14 +31,14 @@ However, while the true anomaly represents the most intuitive and most physicall
 
 Using $E$, the coordinates of $A$ will be much easier to determine later. Putting $C$ as the origin,
 ```math
-\sin (E) = \frac{x}{a}
+\sin \left(E\right) = \frac{x}{a}
 ```
 and because $x^2/a^2 + y^2/b^2 = 1$,
 ```math
 \begin{align}
 \left(\frac{y}{b}\right)^2 &= 1 - \left(\frac{x}{a}\right)^2\\
-&= 1 - \sin^2 (E)\\
-\therefore \frac{y}{b} &= \cos (E)
+&= 1 - \sin^2 \left(E\right)\\
+\therefore \frac{y}{b} &= \cos \left(E\right)
 \end{align}
 ```
 <br/>
@@ -48,8 +48,8 @@ Therefore,
 ```math
 \displaylines{
 \begin{align}
-x &= a\sin (E)\\
-y &= b\cos (E)\\
+x &= a\sin \left(E\right)\\
+y &= b\cos \left(E\right)\\
 \end{align}
 } 
 ```
@@ -57,35 +57,35 @@ Now, translating the origin to the focus $O$,
 ```math
 \displaylines{
 \begin{align}
-x_{\text{perifocal}} &= a\sin (E) - ae\\
+x_{\text{perifocal}} &= a\sin \left(E\right) - ae\\
 \\
-y_{\text{perifocal}} &= b\cos (E)\\
-&= a\sqrt{1 - e^2}\sin (E)
+y_{\text{perifocal}} &= b\cos \left(E\right)\\
+&= a\sqrt{1 - e^2}\sin \left(E\right)
 \end{align}\tag{2.14}
 } 
 ```
 Additionally, by the Pythagorean theorem then,
 ```math
 \begin{align}
-r^2 &= (a\cos (E) - ae)^2 + (a\sqrt{1 - e^2}\sin (E))^2\\
-&= a^2 \cos^2 (E) - 2a^2e\cos (E) + a^2e^2 + a^2(1 - e^2) \sin^2 (E)\\
-&= a^2 \cos^2 (E) - 2a^2e\cos (E) + a^2e^2 + (a^2 - a^2e^2)(1 - \cos^2 (E)) \\
-&= a^2 \cos^2 (E) - 2a^2e\cos (E) + a^2e^2 + a^2 - a^2\cos^2 (E) - a^2e^2 + a^2e^2\cos^2 (E) \\
-&= a^2 - 2a^2e\cos (E) + a^2e^2\cos^2 (E)\\
-&= (a - ae\cos (E))^2\\
-\therefore r &= a(1 - e\cos (E))
+r^2 &= \left(a\cos \left(E\right) - ae\right)^2 + \left(a\sqrt{1 - e^2}\sin \left(E\right)\right)^2\\
+&= a^2 \cos^2 \left(E\right) - 2a^2e\cos \left(E\right) + a^2e^2 + a^2\left(1 - e^2\right) \sin^2 \left(E\right)\\
+&= a^2 \cos^2 \left(E\right) - 2a^2e\cos \left(E\right) + a^2e^2 + \left(a^2 - a^2e^2\right)\left(1 - \cos^2 \left(E\right)\right) \\
+&= a^2 \cos^2 \left(E\right) - 2a^2e\cos \left(E\right) + a^2e^2 + a^2 - a^2\cos^2 \left(E\right) - a^2e^2 + a^2e^2\cos^2 \left(E\right) \\
+&= a^2 - 2a^2e\cos \left(E\right) + a^2e^2\cos^2 \left(E\right)\\
+&= \left(a - ae\cos \left(E\right)\right)^2\\
+\therefore r &= a\left(1 - e\cos \left(E\right)\right)
 \end{align}\tag{2.15}
 ```
 Let's now relate $\nu$ with $E$. Putting $C$ as the origin again,
 ```math
 \begin{align}
-\cos (E) &= \frac{x}{a} = \frac{ae + r \cos (\nu)}{a} = e(1 - e\cos (E))\cos(\nu)\\
-\therefore \cos (E) &= \frac{e + \cos(\nu)}{1 + e\cos(\nu)}
+\cos \left(E\right) &= \frac{x}{a} = \frac{ae + r \cos \left(\nu\right)}{a} = e\left(1 - e\cos \left(E\right)\right)\cos\left(\nu\right)\\
+\therefore \cos \left(E\right) &= \frac{e + \cos\left(\nu\right)}{1 + e\cos\left(\nu\right)}
 \end{align}\tag{2.16}
 ```
 This formula for $E$ is ambiguous. If $\nu > 180\degree$, we need to take the negative arccosine value.
 
-The true anomaly can be obtained from the eccentric anomaly by getting $x_{\text{perifocal}}$ and $y_{\text{perifocal}}$ first, then calculating $\arctan(y_{\text{perifocal}}, x_{\text{perifocal})}$ (equation $2.12$).
+The true anomaly can be obtained from the eccentric anomaly by getting $x_{\text{perifocal}}$ and $y_{\text{perifocal}}$ first, then calculating $\arctan\left(y_{\text{perifocal}}, x_{\text{perifocal}}\right)$ (equation $2.12$).
 
 ### Kepler's Second Law
 We have discussed Kepler's first and third laws. Now let us tackle his second law, which states that the area sweeped out by a planet over a unit time must stay constant.
@@ -121,55 +121,55 @@ r^2 \nu' = nab = na^2\sqrt{1 - e^2}
 
 Now, recall equation $2.15$:
 ```math
-r = a(1 - e\cos (E))
+r = a\left(1 - e\cos \left(E\right)\right)
 ```
 Differentiating both sides with respect to time gives us:
 ```math
 \begin{align}
-r' = ae\sin(E)E'
+r' = ae\sin\left(E\right)E'
 \end{align}\tag{2.18}
 ```
 Now recall equation $2.13$:
 ```math
 \begin{align}
-r &= \frac{a(1 - e^2)}{1 + e\cos(\nu)} \\
-\therefore\frac{1}{r} &= \frac{1 + e\cos(\nu)}{a(1 - e^2)}
+r &= \frac{a\left(1 - e^2\right)}{1 + e\cos\left(\nu\right)} \\
+\therefore\frac{1}{r} &= \frac{1 + e\cos\left(\nu\right)}{a\left(1 - e^2\right)}
 \end{align}
 ```
 Differentiating both sides of this equation we obtain:
 ```math
 \begin{align}
--\frac{r'}{r^2} = -\frac{e \sin (\nu) \nu'}{a(1 - e^2)} \\
-\therefore r' = \frac{e\sin(\nu)r^2\nu'}{a(1 - e^2)}
+-\frac{r'}{r^2} = -\frac{e \sin \left(\nu\right) \nu'}{a\left(1 - e^2\right)} \\
+\therefore r' = \frac{e\sin\left(\nu\right)r^2\nu'}{a\left(1 - e^2\right)}
 \end{align}\tag{2.19}
 ```
 Now we substitute equation $2.17$ in equation $2.19$:
 ```math
-r' = \frac{nae\sin(\nu)}{\sqrt{1 - e^2}}
+r' = \frac{nae\sin\left(\nu\right)}{\sqrt{1 - e^2}}
 ```
 Equating this with equation $2.18$:
 ```math
 \begin{align}
-ae\sin(E)E' &= \frac{nae\sin(\nu)}{\sqrt{1 - e^2}}\\
-E' &= \frac{n\sin(\nu)}{\sqrt{1 - e^2}\sin(E)}
+ae\sin\left(E\right)E' &= \frac{nae\sin\left(\nu\right)}{\sqrt{1 - e^2}}\\
+E' &= \frac{n\sin\left(\nu\right)}{\sqrt{1 - e^2}\sin\left(E\right)}
 \end{align}
 ```
-But $\sqrt{1 - e^2}\sin(E)$ is just $y_{\text{perifocal}}/a$ by equation $2.14$, and $y_{\text{perifocal}} = r\sin(\nu)$ by equation $2.12$, so:
+But $\sqrt{1 - e^2}\sin\left(E\right)$ is just $y_{\text{perifocal}}/a$ by equation $2.14$, and $y_{\text{perifocal}} = r\sin\left(\nu\right)$ by equation $2.12$, so:
 ```math
 \begin{align}
-E' &= \frac{n\sin(\nu)}{r\sin(\nu)/a}\\
+E' &= \frac{n\sin\left(\nu\right)}{r\sin\left(\nu\right)/a}\\
 \therefore rE' &= na
 \end{align}
 ```
 Now, substituting equation $2.15$ for $r$:
 ```math
-(1 - e\cos (E)) E' = n
+\left(1 - e\cos \left(E\right)\right) E' = n
 ```
 Integrating over time on both sides yields:
 ```math
-E - e\sin(E) = nt + c.
+E - e\sin\left(E\right) = nt + c.
 ```
-If we measure $t$ from the time of periapsis, then when $t = 0$, $E - e\sin(E) = 0$ since $E = 0$ at periapsis. Therefore $c. = 0$.\
+If we measure $t$ from the time of periapsis, then when $t = 0$, $E - e\sin\left(E\right) = 0$ since $E = 0$ at periapsis. Therefore $c. = 0$.\
 Let's also denote $nt$ as $M$. We call this quantity the [*mean anomaly*](https://en.wikipedia.org/wiki/Mean_anomaly):
 ```math
 \begin{align}
@@ -179,7 +179,7 @@ M = nt = \frac{2\pi}{T}\cdot t
 Now the equation becomes:
 ```math
 \begin{align}
-M = E - e\sin (E)
+M = E - e\sin \left(E\right)
 \end{align}\tag{2.21}
 ```
 Which is known as [**Kepler's Equation**](https://en.wikipedia.org/wiki/Kepler%27s_equation). This equation allows us to relate $E$ and $M$, thus relating $E$ and $t$, which allows us to finally calculate the motion of the planets. Keep in mind that we **must use radians** for $M$ and $E$.
@@ -212,8 +212,8 @@ Spring Equinox in the Northern Hemisphere is defined as $\lambda_{\text{Sun, Geo
 Now, by equation $2.16$ ($\nu < 180\degree$):
 ```math
 \begin{align}
-\cos (E) &= \frac{e + \cos(\nu)}{1 + e\cos(\nu)}\\
-&= \frac{0.0167 + \cos(77\degree\:3'\:50.1'')}{1 + 0.0167\cos(77\degree\:3'\:50.1'')}\\
+\cos \left(E\right) &= \frac{e + \cos\left(\nu\right)}{1 + e\cos\left(\nu\right)}\\
+&= \frac{0.0167 + \cos\left(77\degree\:3'\:50.1''\right)}{1 + 0.0167\cos\left(77\degree\:3'\:50.1''\right)}\\
 &= 0.239855411\\
 \therefore E &= 1.3285794 \text{ rad}
 \end{align}
@@ -221,8 +221,8 @@ Now, by equation $2.16$ ($\nu < 180\degree$):
 Now, by Kepler's equation (equation $2.21$):
 ```math
 \begin{align}
-M &= E - e\sin (E)\\
-&= 1.3285794 - 0.0167 \sin (1.3285794)\\
+M &= E - e\sin \left(E\right)\\
+&= 1.3285794 - 0.0167 \sin \left(1.3285794\right)\\
 &= 1.3123669 \text{ rad}
 \end{align}
 ```
@@ -239,33 +239,33 @@ $76\text{ dy}$ $6h$ $55m$ after $\text{January 3, }2024$ $00:38$ is $\text{March
 Comparing to the true time ($\text{March 20, }2024$ $03:07$), we can see that we are close. The discrepancy comes from rounding error and the fact that the motion of the Earth is not a true two body problem.\
 $\blacksquare$
 
-However what we really want is the reverse operation of example $2.3$: going from a specific time to a location. Sounds easy: $M$ is very easy to calculate, and $E$ gives us the exact coordinates $(x, y)$, and we have a relation between $M$ and $E$ by [Kepler's equation](https://en.wikipedia.org/wiki/Kepler%27s_equation) (equation $2.21$)!\
+However what we really want is the reverse operation of example $2.3$: going from a specific time to a location. Sounds easy: $M$ is very easy to calculate, and $E$ gives us the exact coordinates $\left(x, y\right)$, and we have a relation between $M$ and $E$ by [Kepler's equation](https://en.wikipedia.org/wiki/Kepler%27s_equation) (equation $2.21$)!\
 Unfortunately, Kepler's equation
 ```math
-M = E - e\sin (E)
+M = E - e\sin \left(E\right)
 ```
 is [transcendental](https://en.wikipedia.org/wiki/Transcendental_function), which means $E$ cannot be solved for $M$ analytically.\
 However, there is hope! We can solve for $E$ [*numerically*](https://en.wikipedia.org/wiki/Numerical_analysis). 
 
 First we rearrange the equation:
 ```math
-E - e \sin (E) - M = 0
+E - e \sin \left(E\right) - M = 0
 ```
-We then define $f$ as a function of $E$ to be $f(E) = E - e \sin (E) - M$. Then we juse need to find the root of $f(E) = 0$.\
+We then define $f$ as a function of $E$ to be $f\left(E\right) = E - e \sin \left(E\right) - M$. Then we juse need to find the root of $f\left(E\right) = 0$.\
 We use the [Newton–Raphson method](https://en.wikipedia.org/wiki/Newton%27s_method), given by the iterative equation
 ```math
 \begin{align}
-x_{n + 1} = x_n - \frac{f(x_n)}{f'(x_n)}.
+x_{n + 1} = x_n - \frac{f\left(x_n\right)}{f'\left(x_n\right)}.
 \end{align}\tag{2.22}
 ```
-Clearly, we need to find $f'(E)$.
+Clearly, we need to find $f'\left(E\right)$.
 ```math
-\frac{df}{dE} =  1 - e \cos (E)
+\frac{df}{dE} =  1 - e \cos \left(E\right)
 ```
 By plugging all the values into equation $2.22$, we obtain:
 ```math
 \begin{align}
-E_{n + 1} = E_n - \frac{E_n - e\sin(E_n) - M}{1 - e\cos(E_n)}
+E_{n + 1} = E_n - \frac{E_n - e\sin\left(E_n\right) - M}{1 - e\cos\left(E_n\right)}
 \end{align}\tag{2.23}
 ```
 which we can use to iteratively obtain better and better approximations of $E$, which we can then use to find the coordinates of the planet.
@@ -295,14 +295,14 @@ M &= \frac{2\pi}{365.2422\text{ dy}} \cdot 76 \text{ dy}\:6h\:55m \\
 We now perform the Newton iteration. We first guess $E_1 = M$, and obtain $E_2$ by equation $2.23$.
 ```math
 \begin{align}
-E_2 &= M - \frac{M - e\sin(M) - M}{1 - e\cos(M)}\\
+E_2 &= M - \frac{M - e\sin\left(M\right) - M}{1 - e\cos\left(M\right)}\\
 &= 1.3285815 \text{ rad}
 \end{align}
 ```
 We perform it again, now using $E_2$ for $E_n$.
 ```math
 \begin{align}
-E_3 &= E_2 - \frac{E_2 - e\sin(E_2) - M}{1 - e\cos(E_2)}\\
+E_3 &= E_2 - \frac{E_2 - e\sin\left(E_2\right) - M}{1 - e\cos\left(E_2\right)}\\
 &= 1.3285794 \text{ rad}
 \end{align}
 ```
@@ -316,22 +316,22 @@ Here is the table of repetitions:
 \end{array}
 ```
 As we can see, $E$ has quickly converged onto $1.3285794\text{ rad}$. In general it can be assumed that $E_4$ or $E_5$ will be enough.\
-We can now calculate $(x, y)$ with equation $2.14$:
+We can now calculate $\left(x, y\right)$ with equation $2.14$:
 ```math
 \begin{align}
-x_{\text{perifocal}} &= a \cos (E) - ae\\
-&= 149.6 \cos(1.3285794) - 149.6 \cdot 0.0167 \\
+x_{\text{perifocal}} &= a \cos \left(E\right) - ae\\
+&= 149.6 \cos\left(1.3285794\right) - 149.6 \cdot 0.0167 \\
 &= 33.384 \text{ Gm}\\
 \\
-y_{\text{perifocal}} &= b \sin (E)\\
-&= a\sqrt{1 - e^2} \sin (E)\\
-&= 149.6 \sqrt{1 - 0.0167^2} \sin(1.3285794)\\
+y_{\text{perifocal}} &= b \sin \left(E\right)\\
+&= a\sqrt{1 - e^2} \sin \left(E\right)\\
+&= 149.6 \sqrt{1 - 0.0167^2} \sin\left(1.3285794\right)\\
 &= 145.213 \text{ Gm}
 \end{align}
 ```
 Then, by equation $2.12$, the true anomaly is:
 ```math
-\arctan(145.213, 33.384) = 77\degree\:3'\:10.27''
+\arctan\left(145.213, 33.384\right) = 77\degree\:3'\:10.27''
 ```
 Which, when added with the ecliptic longitude of the periapsis $102\degree\:56'\:49.9''$ gives:
 ```math
@@ -359,7 +359,7 @@ It is advised for the average reader to skip this investigation.
 
 The area of this triangle $dA$ well represents the small area that is sweeped out by the planet over a small time $dt$. This area is given by:
 ```math
-dA = \frac{1}{2}rdr\sin(s)
+dA = \frac{1}{2}rdr\sin\left(s\right)
 ```
 where $r$ and $dr$ are the magnitudes of $\textbf{r}$ and $d\textbf{r}$ respectively. This can be written in vector form as:
 ```math
@@ -373,8 +373,8 @@ Kepler's second law states that this quantity $d\textbf{A}/dt$ must be constant,
 Calculating $d^2\textbf{A}/dt^2 = 0$:
 ```math
 \begin{align}
-\frac{d^2\textbf{A}}{dt^2} &= \frac{1}{2}(\frac{d\textbf{r}}{dt}\times\frac{d\textbf{r}}{dt} + \textbf{r}\times \frac{d^2\textbf{r}}{dt^2})\\
-&= \frac{1}{2}(\textbf{v}\times\textbf{v} + \textbf{r}\times\textbf{a})\\
+\frac{d^2\textbf{A}}{dt^2} &= \frac{1}{2}\left(\frac{d\textbf{r}}{dt}\times\frac{d\textbf{r}}{dt} + \textbf{r}\times \frac{d^2\textbf{r}}{dt^2}\right)\\
+&= \frac{1}{2}\left(\textbf{v}\times\textbf{v} + \textbf{r}\times\textbf{a}\right)\\
 &= \frac{1}{2}\textbf{r}\times\textbf{a}
 \end{align}
 ```
